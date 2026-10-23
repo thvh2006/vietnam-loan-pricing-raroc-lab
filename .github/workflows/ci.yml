@@ -25,10 +25,14 @@ jobs:
         run: python -m pip install -e .
       - name: Run model and report controls
         run: python -m unittest discover -s tests -v
+      - name: Snapshot committed evidence
+        run: |
+          mkdir -p /tmp/committed-reports
+          cp reports/*.csv reports/*.json /tmp/committed-reports/
       - name: Rebuild deterministic outputs
         run: |
           python -m scripts.run_portfolio
           python -m scripts.build_sensitivity
           python -m scripts.build_extended_reports
       - name: Confirm reproducible reports
-        run: git diff --exit-code -- reports
+        run: python -m scripts.check_reproducibility /tmp/committed-reports reports
