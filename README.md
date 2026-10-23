@@ -1,5 +1,9 @@
 # Vietnam Loan Pricing & RAROC Lab
 
+[![Model controls](https://github.com/thvh2006/vietnam-loan-pricing-raroc-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/thvh2006/vietnam-loan-pricing-raroc-lab/actions/workflows/ci.yml)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-1f6feb)](pyproject.toml)
+[![Workbook](https://img.shields.io/badge/deliverable-13--sheet%20Excel-217346)](reports/Vietnam_Loan_Pricing_RAROC_Workbook.xlsx)
+
 An auditable decision case for pricing unsecured personal instalment loans in Vietnam. The project connects underwriting risk to a quoted annual rate, capital consumption, risk-adjusted return and a controlled credit action.
 
 The central question is:
@@ -81,6 +85,7 @@ The break-even contractual rate is solved numerically so that RAROC meets the se
 | `MODEL_CARD.md` | Intended use, limitations, validation evidence and production path |
 | `docs/model_charter.md` | Intended use, prohibited use and governance |
 | `docs/research_synthesis.md` | Regulatory and market evidence with claim boundaries |
+| `docs/validation_report.md` | Automated controls, reconciliation evidence and production validation backlog |
 | `tests/` | Formula, monotonicity and policy boundary tests |
 
 ## Reproduce
@@ -93,6 +98,8 @@ python -m unittest discover -s tests -v
 ```
 
 The engine uses only the Python standard library. Generated reports are deterministic for the configured random seed.
+
+The continuous-integration workflow tests Python 3.11 and 3.12, rebuilds the evidence pack and fails when committed reports are no longer reproducible.
 
 ## Workbook experience
 
