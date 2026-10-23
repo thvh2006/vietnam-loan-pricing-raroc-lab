@@ -1,0 +1,29 @@
+{
+  "Base": {
+    "pd_multiplier": 1.00,
+    "lgd_addon": 0.000,
+    "funding_rate": 0.046,
+    "liquidity_premium": 0.005,
+    "servicing_cost_rate": 0.012,
+    "management_capital_buffer": 0.025,
+    "raroc_hurdle": 0.16
+  },
+  "Downside": {
+    "pd_multiplier": 1.35,
+    "lgd_addon": 0.075,
+    "funding_rate": 0.061,
+    "liquidity_premium": 0.008,
+    "servicing_cost_rate": 0.017,
+    "management_capital_buffer": 0.035,
+    "raroc_hurdle": 0.18
+  },
+  "Severe": {
+    "pd_multiplier": 1.75,
+    "lgd_addon": 0.150,
+    "funding_rate": 0.076,
+    "liquidity_premium": 0.012,
+    "servicing_cost_rate": 0.022,
+    "management_capital_buffer": 0.050,
+    "raroc_hurdle": 0.20
+  }
+}

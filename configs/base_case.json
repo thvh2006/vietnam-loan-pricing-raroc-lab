@@ -1,0 +1,26 @@
+{
+  "as_of_date": "2026-10-22",
+  "currency": "VND",
+  "product": "Unsecured personal instalment loan",
+  "funding_rate": 0.046,
+  "liquidity_premium": 0.005,
+  "servicing_cost_rate": 0.012,
+  "origination_cost_vnd": 1200000,
+  "tax_rate": 0.20,
+  "retail_risk_weight": 0.75,
+  "regulatory_capital_ratio": 0.08,
+  "management_capital_buffer": 0.025,
+  "management_capital_floor_rate": 0.06,
+  "economic_capital_confidence": 0.999,
+  "asset_correlation": 0.04,
+  "raroc_hurdle": 0.16,
+  "minimum_apr": 0.07,
+  "maximum_management_apr": 0.30,
+  "maximum_pd": 0.20,
+  "maximum_debt_service_to_income": 0.50,
+  "ead_at_default_multiplier": 1.00,
+  "rate_solver_tolerance": 0.000001,
+  "portfolio_seed": 20261022,
+  "portfolio_size": 4000
+}
+
