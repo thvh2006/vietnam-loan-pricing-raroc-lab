@@ -28,7 +28,7 @@ The control suite covers four layers:
 | Price bridge | Component bridge reconciles to the exact solver floor | Pass |
 | Scenario ordering | Price floors rise from Base to Downside to Severe | Pass |
 
-The repository runs 11 automated tests on Python 3.11 and 3.12 through GitHub Actions. The workflow also rebuilds deterministic reports and fails if generated outputs drift from the committed evidence pack.
+The repository runs 11 automated tests on Python 3.11 and 3.12 through GitHub Actions. The workflow also rebuilds deterministic reports and compares them with the committed evidence pack using explicit cross-platform numerical tolerances (`rel_tol=1e-12`, `abs_tol=1e-8`). This prevents machine-level floating-point noise from masking the distinction between harmless representation differences and economically meaningful drift.
 
 ## Independent workbook reconciliation
 
