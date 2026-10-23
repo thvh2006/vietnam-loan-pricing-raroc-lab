@@ -1,0 +1,55 @@
+{
+  "as_of_date": "2026-10-22",
+  "portfolio_is_synthetic": true,
+  "application_count": 4000,
+  "total_requested_exposure_vnd": 558183000000.0,
+  "actions": {
+    "approve": 2750,
+    "decline": 953,
+    "manual_review": 56,
+    "reprice": 241
+  },
+  "action_share": {
+    "approve": 0.6875,
+    "decline": 0.23825,
+    "manual_review": 0.014,
+    "reprice": 0.06025
+  },
+  "exposure_by_action_vnd": {
+    "approve": 366173000000.0,
+    "decline": 166110000000.0,
+    "manual_review": 7117000000.0,
+    "reprice": 18783000000.0
+  },
+  "risk_tiers": {
+    "A": 326,
+    "B": 853,
+    "C": 1324,
+    "D": 847,
+    "E": 650
+  },
+  "price_floor_apr_p25": 0.11134830474853516,
+  "price_floor_apr_median": 0.13802505493164063,
+  "price_floor_apr_p75": 0.17646835327148436,
+  "quoted_raroc_median": 0.39399106178150445,
+  "assumptions": {
+    "funding_rate": 0.046,
+    "liquidity_premium": 0.005,
+    "servicing_cost_rate": 0.012,
+    "origination_cost_vnd": 1200000,
+    "tax_rate": 0.2,
+    "retail_risk_weight": 0.75,
+    "regulatory_capital_ratio": 0.08,
+    "management_capital_buffer": 0.025,
+    "management_capital_floor_rate": 0.06,
+    "economic_capital_confidence": 0.999,
+    "asset_correlation": 0.04,
+    "raroc_hurdle": 0.16,
+    "minimum_apr": 0.07,
+    "maximum_management_apr": 0.3,
+    "maximum_pd": 0.2,
+    "maximum_debt_service_to_income": 0.5,
+    "ead_at_default_multiplier": 1.0,
+    "rate_solver_tolerance": 1e-06
+  }
+}

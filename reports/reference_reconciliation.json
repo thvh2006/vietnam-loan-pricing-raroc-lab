@@ -1,0 +1,23 @@
+{
+  "engine": {
+    "contractual_apr": 0.18,
+    "monthly_payment_vnd": 3615239.553591701,
+    "average_performing_ead_vnd": 53585390.19943503,
+    "interest_income_vnd": 28936110.707694918,
+    "fee_income_vnd": 1000000.0,
+    "funding_cost_vnd": 7394783.847522034,
+    "liquidity_cost_vnd": 803780.8529915253,
+    "operating_cost_vnd": 3129074.0471796608,
+    "expected_loss_vnd": 4585866.662211332,
+    "pre_tax_risk_adjusted_profit_vnd": 14022605.297790363,
+    "after_tax_risk_adjusted_profit_vnd": 11218084.23823229,
+    "regulatory_capital_vnd": 4219849.4782055095,
+    "economic_capital_vnd": 3144875.8976556244,
+    "management_floor_capital_vnd": 3215123.4119661017,
+    "allocated_capital_vnd": 4219849.4782055095,
+    "annualised_raroc": 0.8861362074777748,
+    "debt_service_to_income": 0.22050798511972336
+  },
+  "exact_price_floor_apr": 0.10856086730957032,
+  "source": "Python engine"
+}

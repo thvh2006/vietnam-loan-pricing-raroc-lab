@@ -1,0 +1,107 @@
+{
+  "Base": {
+    "inputs": {
+      "pd_multiplier": 1.0,
+      "lgd_addon": 0.0,
+      "funding_rate": 0.046,
+      "liquidity_premium": 0.005,
+      "servicing_cost_rate": 0.012,
+      "management_capital_buffer": 0.025,
+      "raroc_hurdle": 0.16
+    },
+    "application_count": 4000,
+    "action_count": {
+      "approve": 2750,
+      "decline": 953,
+      "manual_review": 56,
+      "reprice": 241
+    },
+    "action_share": {
+      "approve": 0.6875,
+      "decline": 0.23825,
+      "manual_review": 0.014,
+      "reprice": 0.06025
+    },
+    "exposure_by_action_vnd": {
+      "approve": 366173000000.0,
+      "decline": 166110000000.0,
+      "manual_review": 7117000000.0,
+      "reprice": 18783000000.0
+    },
+    "approved_exposure_share": 0.6560088716424541,
+    "median_price_floor_apr": 0.13802505493164063,
+    "p75_price_floor_apr": 0.17646835327148436,
+    "median_quoted_raroc": 0.39399106178150445,
+    "total_expected_loss_vnd": 45189633399.1221,
+    "total_allocated_capital_vnd": 29429602299.263966
+  },
+  "Downside": {
+    "inputs": {
+      "pd_multiplier": 1.35,
+      "lgd_addon": 0.075,
+      "funding_rate": 0.061,
+      "liquidity_premium": 0.008,
+      "servicing_cost_rate": 0.017,
+      "management_capital_buffer": 0.035,
+      "raroc_hurdle": 0.18
+    },
+    "application_count": 4000,
+    "action_count": {
+      "approve": 293,
+      "decline": 1277,
+      "manual_review": 145,
+      "reprice": 2285
+    },
+    "action_share": {
+      "approve": 0.07325,
+      "decline": 0.31925,
+      "manual_review": 0.03625,
+      "reprice": 0.57125
+    },
+    "exposure_by_action_vnd": {
+      "approve": 45861000000.0,
+      "decline": 208928000000.0,
+      "manual_review": 15462000000.0,
+      "reprice": 287932000000.0
+    },
+    "approved_exposure_share": 0.08216122669447116,
+    "median_price_floor_apr": 0.18402786254882808,
+    "p75_price_floor_apr": 0.23115371704101562,
+    "median_quoted_raroc": -0.049537229447139626,
+    "total_expected_loss_vnd": 65852762811.971565,
+    "total_allocated_capital_vnd": 35062590019.06646
+  },
+  "Severe": {
+    "inputs": {
+      "pd_multiplier": 1.75,
+      "lgd_addon": 0.15,
+      "funding_rate": 0.076,
+      "liquidity_premium": 0.012,
+      "servicing_cost_rate": 0.022,
+      "management_capital_buffer": 0.05,
+      "raroc_hurdle": 0.2
+    },
+    "application_count": 4000,
+    "action_count": {
+      "decline": 1746,
+      "manual_review": 441,
+      "reprice": 1813
+    },
+    "action_share": {
+      "decline": 0.4365,
+      "manual_review": 0.11025,
+      "reprice": 0.45325
+    },
+    "exposure_by_action_vnd": {
+      "decline": 268080000000.0,
+      "manual_review": 53338000000.0,
+      "reprice": 236765000000.0
+    },
+    "approved_exposure_share": 0.0,
+    "median_price_floor_apr": 0.21779384613037112,
+    "p75_price_floor_apr": 0.2547078704833983,
+    "median_quoted_raroc": -0.46756351941456425,
+    "total_expected_loss_vnd": 90871816972.14713,
+    "total_allocated_capital_vnd": 40695131113.28917
+  }
+}

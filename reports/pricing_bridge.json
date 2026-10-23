@@ -1,0 +1,56 @@
+{
+  "reference_application": {
+    "application_id": "REFERENCE",
+    "principal_vnd": 100000000,
+    "term_months": 36,
+    "annual_pd": 0.04,
+    "lgd": 0.7,
+    "quoted_apr": 0.18,
+    "upfront_fee_rate": 0.01,
+    "monthly_income_vnd": 30000000,
+    "existing_monthly_debt_vnd": 3000000,
+    "data_quality_flag": false
+  },
+  "steps": [
+    {
+      "component": "Starting rate",
+      "incremental_apr": 0.0,
+      "cumulative_apr": 0.0
+    },
+    {
+      "component": "Funding cost",
+      "incremental_apr": 0.04600048065185547,
+      "cumulative_apr": 0.04600048065185547
+    },
+    {
+      "component": "Liquidity premium",
+      "incremental_apr": 0.005000114440917969,
+      "cumulative_apr": 0.05100059509277344
+    },
+    {
+      "component": "Operating cost",
+      "incremental_apr": 0.01952648162841797,
+      "cumulative_apr": 0.0705270767211914
+    },
+    {
+      "component": "Expected loss",
+      "incremental_apr": 0.028733253479003906,
+      "cumulative_apr": 0.09926033020019531
+    },
+    {
+      "component": "Capital return",
+      "incremental_apr": 0.012556076049804688,
+      "cumulative_apr": 0.11181640625
+    },
+    {
+      "component": "Tax gross-up",
+      "incremental_apr": 0.003139495849609375,
+      "cumulative_apr": 0.11495590209960938
+    },
+    {
+      "component": "Upfront fee offset",
+      "incremental_apr": -0.0063953399658203125,
+      "cumulative_apr": 0.10856056213378906
+    }
+  ]
+}
