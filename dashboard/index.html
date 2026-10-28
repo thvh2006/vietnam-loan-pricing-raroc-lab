@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive Vietnam loan pricing, RAROC, capital and decision-policy dashboard.">
+  <title>Vietnam Loan Pricing &amp; RAROC Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span>LP</span>Loan Pricing Lab</a>
+    <nav><a href="#decision">Decision</a><a href="#scenario">Scenario</a><a href="#portfolio">Portfolio</a><a href="#governance">Governance</a></nav>
+    <a class="repo" href="https://github.com/thvh2006/vietnam-loan-pricing-raroc-lab" target="_blank" rel="noreferrer">View model ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="decision">
+      <div class="eyebrow"><i></i> FROZEN PORTFOLIO · 22 OCT 2026</div>
+      <div class="hero-grid">
+        <div>
+          <p class="overline">UNSECURED PERSONAL INSTALMENT LOAN</p>
+          <h1>Price for risk.<br><em>Decide with controls.</em></h1>
+          <p class="lede">An application-time decision cockpit linking PD, LGD, cash flow, funding, operating cost and allocated capital to a transparent customer-rate floor.</p>
+        </div>
+        <aside class="decision-card" aria-live="polite">
+          <span>Current decision</span>
+          <strong id="decision-action">APPROVE</strong>
+          <p id="decision-reason">Eligibility and RAROC conditions are met.</p>
+          <div><b id="decision-tier">B</b> risk tier <b id="decision-gap">+7.14 pp</b> pricing headroom</div>
+        </aside>
+      </div>
+      <div class="kpis">
+        <article><span>Price floor APR</span><strong id="kpi-floor">10.86%</strong><small>Minimum for target RAROC</small></article>
+        <article><span>Quoted APR</span><strong id="kpi-quote">18.00%</strong><small>Editable scenario input</small></article>
+        <article><span>Annualised RAROC</span><strong id="kpi-raroc">88.61%</strong><small id="kpi-hurdle">Hurdle 16.00%</small></article>
+        <article><span>Allocated capital</span><strong id="kpi-capital">VND 4.22m</strong><small id="capital-owner">Regulatory proxy binds</small></article>
+      </div>
+    </section>
+
+    <section class="scenario" id="scenario">
+      <div class="scenario-copy">
+        <p class="overline pale">LIVE APPLICATION SCENARIO</p>
+        <h2>Change an assumption.<br>See the decision move.</h2>
+        <p>The browser reproduces the repository's amortisation, expected-loss, capital and binary price-floor solver. Portfolio outputs below remain frozen to the reviewed Python run.</p>
+        <div class="legend"><span><i class="live"></i>Live calculation</span><span><i class="frozen"></i>Reviewed snapshot</span></div>
+      </div>
+
+      <div class="control-board">
+        <form id="pricing-form">
+          <div class="control-grid">
+            <label>Principal <output id="principal-label">VND 100m</output><input id="principal" type="range" min="25" max="250" step="5" value="100"></label>
+            <label>Term <output id="term-label">36 months</output><input id="term" type="range" min="12" max="60" step="12" value="36"></label>
+            <label>Annual PD <output id="pd-label">4.00%</output><input id="pd" type="range" min="0.5" max="25" step="0.5" value="4"></label>
+            <label>LGD <output id="lgd-label">70%</output><input id="lgd" type="range" min="20" max="95" step="5" value="70"></label>
+            <label>Quoted APR <output id="quote-label">18.00%</output><input id="quote" type="range" min="7" max="35" step="0.25" value="18"></label>
+            <label>RAROC hurdle <output id="hurdle-label">16.00%</output><input id="hurdle" type="range" min="8" max="30" step="1" value="16"></label>
+          </div>
+          <div class="number-grid">
+            <label>Funding rate<input id="funding" type="number" min="0" max="20" step="0.1" value="4.6"><em>%</em></label>
+            <label>Liquidity premium<input id="liquidity" type="number" min="0" max="10" step="0.1" value="0.5"><em>%</em></label>
+            <label>Monthly income<input id="income" type="number" min="5" max="200" step="1" value="30"><em>m</em></label>
+            <label>Existing monthly debt<input id="debt" type="number" min="0" max="100" step="1" value="3"><em>m</em></label>
+          </div>
+        </form>
+
+        <div class="live-outputs">
+          <article class="primary"><span>Required price floor</span><strong id="out-floor">10.86%</strong><small id="out-floor-note">Clears 16.00% RAROC hurdle</small></article>
+          <article><span>Monthly payment</span><strong id="out-payment">VND 3.62m</strong><small id="out-dsti">DSTI 22.05%</small></article>
+          <article><span>Expected loss</span><strong id="out-el">VND 4.59m</strong><small id="out-el-share">4.59% of principal</small></article>
+          <article><span>After-tax risk-adjusted profit</span><strong id="out-profit">VND 11.22m</strong><small>At quoted APR</small></article>
+          <article><span>Quoted-rate RAROC</span><strong id="out-raroc">88.61%</strong><small id="out-raroc-pass">PASS</small></article>
+          <article><span>Allocated capital</span><strong id="out-capital">VND 4.22m</strong><small id="out-capital-owner">Regulatory</small></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="heading-row"><div><p class="overline">FROZEN 4,000-APPLICATION RUN</p><h2>Base case is lendable.<br>Stress is not.</h2></div><span class="stamp">SYNTHETIC PORTFOLIO</span></div>
+      <div class="portfolio-grid">
+        <div class="panel">
+          <h3>Decision migration</h3>
+          <div id="migration-chart" class="migration-chart"></div>
+        </div>
+        <div class="panel">
+          <h3>Portfolio posture</h3>
+          <div class="portfolio-stats">
+            <article><span>Base approval</span><strong>68.75%</strong></article>
+            <article><span>Base approved exposure</span><strong>65.60%</strong></article>
+            <article><span>Median floor</span><strong>13.80%</strong></article>
+            <article><span>Severe approval</span><strong>0.00%</strong></article>
+          </div>
+          <p class="callout">Downside moves 57.13% of applications to reprice; Severe produces no approvals. The response is price and policy migration—not a claim of realised loss.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bridge-section">
+      <div class="heading-row"><div><p class="overline">REFERENCE APPLICATION</p><h2>Why the floor is 10.86%.</h2></div><span class="stamp">VND 100m · 36m</span></div>
+      <div id="bridge" class="bridge"></div>
+      <p class="muted">The bridge is order-dependent and explanatory. The exact engine solves the full cash-flow model rather than simply adding rate components.</p>
+    </section>
+
+    <section class="section governance" id="governance">
+      <div class="heading-row"><div><p class="overline">MODEL GOVERNANCE</p><h2>A decision tool,<br>not a lending licence.</h2></div><span class="stamp dark">SHADOW USE</span></div>
+      <div class="governance-grid">
+        <article><b>01</b><h3>Decision boundary</h3><p>Eligibility and affordability gates precede price. A floor above the management cap routes to manual review.</p></article>
+        <article><b>02</b><h3>Evidence boundary</h3><p>Applications are synthetic. PD, LGD and operating costs are assumptions, not estimates calibrated to a lender book.</p></article>
+        <article><b>03</b><h3>Validation</h3><p>Python and Excel reconcile; monotonicity, policy boundaries and deterministic outputs are automatically tested.</p></article>
+        <article><b>04</b><h3>Production gap</h3><p>Outcome calibration, prepayment, delinquency states, collections, fairness, overrides and realised-margin backtesting remain required.</p></article>
+      </div>
+      <div class="downloads">
+        <a href="../reports/Vietnam_Loan_Pricing_RAROC_Workbook.xlsx">Download workbook <span>↘</span></a>
+        <a href="https://github.com/thvh2006/vietnam-loan-pricing-raroc-lab/blob/main/notebooks/01_pricing_research_walkthrough.ipynb">Research notebook <span>↗</span></a>
+        <a href="https://github.com/thvh2006/vietnam-loan-pricing-raroc-lab/blob/main/MODEL_CARD.md">Model card <span>↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>Vietnam Loan Pricing &amp; RAROC Lab</span><span>Educational case study · Not a lending offer</span></footer>
+  <script src="app.js"></script>
+</body>
+</html>
